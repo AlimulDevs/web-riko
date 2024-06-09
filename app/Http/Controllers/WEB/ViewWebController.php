@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use App\Models\Dosen;
 use App\Models\Mahasiswa;
+use App\Models\MataKuliah;
 use App\Models\Pertanyaan;
 use App\Models\Product;
 use App\Models\TransactionDetail;
@@ -42,6 +43,21 @@ class ViewWebController extends Controller
     {
         $data_pertanyaan = Pertanyaan::where("id", $id)->get();
         return view('pertanyaan.edit', compact("data_pertanyaan"));
+    }
+    public function mataKuliahIndex()
+    {
+        $data_mata_kuliah = MataKuliah::get();
+        return view('mataKuliah.index', compact("data_mata_kuliah"));
+    }
+    public function mataKuliahCreateIndex()
+    {
+
+        return view('mataKuliah.create',);
+    }
+    public function mataKuliahEditIndex($id)
+    {
+        $data_mata_kuliah = MataKuliah::where("id", $id)->get();
+        return view('mataKuliah.edit', compact("data_mata_kuliah"));
     }
     public function mahasiswaIndex()
     {

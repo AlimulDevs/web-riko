@@ -134,6 +134,15 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item ">
+                            <a href="/mataKuliah/index" class="nav-link {{(request()->is('mataKuliah/*')?'bg-secondary':'')}}">
+                                <i class="nav-icon fas fa-question"></i>
+                                <p>
+                                    Mata Kuliah
+
+                                </p>
+                            </a>
+                        </li>
 
                         <li class="nav-item {{(request()->is('mahasiswa/*') ||request()->is('dosen/*')?'menu-open':'')}}   ">
                             <a href="#" class="nav-link {{(request()->is('mahasiswa/*') ||request()->is('dosen/*')?'bg-secondary':'')}}">

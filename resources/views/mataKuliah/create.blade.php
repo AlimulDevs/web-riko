@@ -40,18 +40,23 @@
 
     <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title">Tambah Data Pertanyaan</h3>
+            <h3 class="card-title">Tambah Data Mata Kuliah</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form method="POST" action="/pertanyaan/create" enctype="multipart/form-data">
+        <form method="POST" action="/mataKuliah/create" enctype="multipart/form-data">
             @csrf
             <div class="card-body">
 
 
                 <div class="form-group">
-                    <label for="pertanyaan">Pertanyaan</label>
-                    <textarea name="pertanyaan" id="pertanyaan" class="form-control"></textarea>
+                    <label for="nama">Nama Mata Kuliah</label>
+                    <input type="text" class="form-control" name="nama" id="nama">
+                </div>
+
+                <div class="form-group">
+                    <label for="kode">Kode Mata Kuliah</label>
+                    <input type="text" class="form-control" name="kode" id="kode">
                 </div>
 
 

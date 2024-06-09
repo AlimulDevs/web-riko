@@ -9,7 +9,7 @@
 </style>
 
 <div class="container">
-    <h3 class="text-center text-secondary">DATA BALITA
+    <h3 class="text-center text-secondary">DATA MATA KULIAH
     </h3>
     @if ($messege = Session::get('success_delete'))
     <div class="alert alert-danger alert-dismissible " role="alert">

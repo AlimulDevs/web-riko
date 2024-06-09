@@ -9,7 +9,7 @@
 </style>
 
 <div class="container">
-    <h3 class="text-center text-secondary">DATA BALITA
+    <h3 class="text-center text-secondary">DATA MATA KULIAH
     </h3>
     @if ($messege = Session::get('success_delete'))
     <div class="alert alert-danger alert-dismissible " role="alert">
@@ -44,17 +44,23 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form method="POST" action="/pertanyaan/edit">
+        <form method="POST" action="/mataKuliah/edit">
             @csrf
-            @foreach ($data_pertanyaan as $dtp)
-            <input type="hidden" name="id" value="{{$dtp->id}}">
+            @foreach ($data_mata_kuliah as $dtk)
+            <input type="hidden" name="id" value="{{$dtk->id}}">
 
 
             <div class="card-body">
 
+
                 <div class="form-group">
-                    <label for="pertanyaan">Pertanyaan</label>
-                    <textarea name="pertanyaan" id="pertanyaan" class="form-control">{{$dtp->pertanyaan}}</textarea>
+                    <label for="nama">Nama Mata Kuliah</label>
+                    <input value="{{$dtk->nama}}" type="text" class="form-control" name="nama" id="nama">
+                </div>
+
+                <div class="form-group">
+                    <label for="kode">Kode Mata Kuliah</label>
+                    <input value="{{$dtk->kode}}" type="text" class="form-control" name="kode" id="kode">
                 </div>
 
 

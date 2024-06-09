@@ -9,7 +9,7 @@
 </style>
 
 <div class="container">
-    <h3 class="text-center text-secondary">DATA PERTANYAAN
+    <h3 class="text-center text-secondary">DATA MATA KULIAH
     </h3>
     @if ($messege = Session::get('success_delete'))
     <div class="alert alert-danger alert-dismissible " role="alert">
@@ -40,10 +40,10 @@
 
     <div class="card">
         <div class="card-header">
-            <h1 class="text-center">TABEL PERTANYAAN</h1>
+            <h1 class="text-center">TABEL MATA KULIAH</h1>
 
             <div class="text-right">
-                <a class="btn btn-primary" href="/pertanyaan/create-index">
+                <a class="btn btn-primary" href="/mataKuliah/create-index">
                     <i class="fas fa-plus"></i> Tambah Data
                 </a>
             </div>
@@ -59,7 +59,8 @@
                     <thead class="text-center">
                         <tr>
                             <th>Nomor</th>
-                            <th>Pertanyaan</th>
+                            <th>Nama</th>
+                            <th>Kode</th>
 
                             <th>Aksi</th>
 
@@ -69,18 +70,19 @@
                         @php
                         $no = 1;
                         @endphp
-                        @foreach ($data_pertanyaan as $dtp )
+                        @foreach ($data_mata_kuliah as $dtp )
                         <tr>
                             <td>{{$no++}}</td>
-                            <td>{{$dtp->pertanyaan}}</td>
+                            <td>{{$dtp->nama}}</td>
+                            <td>{{$dtp->kode}}</td>
 
 
 
                             <td>
 
-                                <a href="/pertanyaan/edit-index/{{$dtp->id}}" class="btn btn-sm btn-warning"><i class="fas fa-edit text-white"></i></a>
+                                <a href="/mataKuliah/edit-index/{{$dtp->id}}" class="btn btn-sm btn-warning"><i class="fas fa-edit text-white"></i></a>
 
-                                <a href="/pertanyaan/delete/{{$dtp->id}}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                                <a href="/mataKuliah/delete/{{$dtp->id}}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
 
                             </td>
                         </tr>
