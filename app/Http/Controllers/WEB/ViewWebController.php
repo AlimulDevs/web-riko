@@ -5,6 +5,7 @@ namespace App\Http\Controllers\WEB;
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use App\Models\Dosen;
+use App\Models\DosenMataKuliah;
 use App\Models\Mahasiswa;
 use App\Models\MataKuliah;
 use App\Models\Pertanyaan;
@@ -58,6 +59,24 @@ class ViewWebController extends Controller
     {
         $data_mata_kuliah = MataKuliah::where("id", $id)->get();
         return view('mataKuliah.edit', compact("data_mata_kuliah"));
+    }
+    public function dosenMataKuliahIndex()
+    {
+        $data_dosen_mata_kuliah = DosenMataKuliah::get();
+        return view('dosenMataKuliah.index', compact("data_dosen_mata_kuliah"));
+    }
+    public function dosenMataKuliahCreateIndex()
+    {
+        $data_dosen = Dosen::get();
+        $data_mata_kuliah = MataKuliah::get();
+        return view('dosenMataKuliah.create', compact("data_dosen", "data_mata_kuliah"));
+    }
+    public function dosenMataKuliahEditIndex($id)
+    {
+        $data_dosen = Dosen::get();
+        $data_mata_kuliah = MataKuliah::get();
+        $data_dosen_mata_kuliah = DosenMataKuliah::where("id", $id)->get();
+        return view('dosenMataKuliah.edit', compact("data_dosen_mata_kuliah", "data_dosen", "data_mata_kuliah"));
     }
     public function mahasiswaIndex()
     {

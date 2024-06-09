@@ -20,6 +20,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('assets/dist/css/adminlte.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/select2/css/select2.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
 
     <style>
         .row {
@@ -261,6 +262,7 @@
     <!-- jQuery -->
     <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->
+    <script src="{{asset('assets/plugins/select2/js/select2.full.min.js')}}"></script>
     <script src="{{asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- DataTables  & Plugins -->
     <script src="{{asset('assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
@@ -280,75 +282,23 @@
     <!-- AdminLTE App -->
     <script src="{{asset('assets/dist/js/adminlte.min.js')}}"></script>
 
+
     <!-- Bootstrap 4 -->
 
-    <!-- AdminLTE App -->
 
-    <!-- AdminLTE for demo purposes -->
 
-    <!-- AdminLTE for demo purposes -->
-    <script>
-        document.getElementById('foto_ktp').addEventListener('change', function(event) {
-            const fileInput = event.target;
-            console.log(fileInput)
-            const imagePreview = document.getElementById('foto_ktp_view');
-
-            if (fileInput.files && fileInput.files[0]) {
-                const reader = new FileReader();
-
-                reader.onload = function(e) {
-                    imagePreview.src = e.target.result;
-                };
-
-                reader.readAsDataURL(fileInput.files[0]);
-            }
-        });
-        document.getElementById('foto_kk').addEventListener('change', function(event) {
-            const fileInput = event.target;
-            const imagePreview = document.getElementById('foto_kk_view');
-
-            if (fileInput.files && fileInput.files[0]) {
-                const reader = new FileReader();
-
-                reader.onload = function(e) {
-                    imagePreview.src = e.target.result;
-                };
-
-                reader.readAsDataURL(fileInput.files[0]);
-            }
-        });
-        document.getElementById('foto_ktp_edit').addEventListener('change', function(event) {
-            const fileInput = event.target;
-            console.log(fileInput)
-            const imagePreview = document.getElementById('foto_ktp_edit_view');
-
-            if (fileInput.files && fileInput.files[0]) {
-                const reader = new FileReader();
-
-                reader.onload = function(e) {
-                    imagePreview.src = e.target.result;
-                };
-
-                reader.readAsDataURL(fileInput.files[0]);
-            }
-        });
-        document.getElementById('foto_kk_edit').addEventListener('change', function(event) {
-            const fileInput = event.target;
-            const imagePreview = document.getElementById('foto_kk_edit_view');
-
-            if (fileInput.files && fileInput.files[0]) {
-                const reader = new FileReader();
-
-                reader.onload = function(e) {
-                    imagePreview.src = e.target.result;
-                };
-
-                reader.readAsDataURL(fileInput.files[0]);
-            }
-        });
-    </script>
-    <script src="{{asset('assets/plugins/select2/js/select2.full.min.js')}}"></script>
     <!-- Page specific script -->
+    <script>
+        $(function() {
+            //Initialize Select2 Elements
+            $('#select2').select2()
+
+            //Initialize Select2 Elements
+            $('.select2bs4').select2({
+                theme: 'bootstrap4'
+            })
+        })
+    </script>
     <script>
         $(function() {
             $("#example1").DataTable({

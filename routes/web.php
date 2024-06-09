@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\WEB\AuthWebController;
+use App\Http\Controllers\WEB\DosenMataKuliahWebController;
 use App\Http\Controllers\WEB\DosenWebController;
 use App\Http\Controllers\WEB\MahasiswaWebController;
 use App\Http\Controllers\WEB\MataKuliahWebController;
@@ -42,6 +43,13 @@ Route::middleware(['session.token'])->prefix('')->group(function () {
     Route::get('/mataKuliah/delete/{id}', [MataKuliahWebController::class, 'delete']);
     Route::get('/mataKuliah/create-index', [ViewWebController::class, 'mataKuliahCreateIndex']);
     Route::get('/mataKuliah/edit-index/{id}', [ViewWebController::class, 'mataKuliahEditIndex']);
+    // dosenMataKuliah
+    Route::get('/dosenMataKuliah/index', [ViewWebController::class, 'dosenMataKuliahIndex']);
+    Route::post('/dosenMataKuliah/create', [DosenMataKuliahWebController::class, 'create']);
+    Route::post('/dosenMataKuliah/edit', [DosenMataKuliahWebController::class, 'update']);
+    Route::get('/dosenMataKuliah/delete/{id}', [DosenMataKuliahWebController::class, 'delete']);
+    Route::get('/dosenMataKuliah/create-index', [ViewWebController::class, 'dosenMataKuliahCreateIndex']);
+    Route::get('/dosenMataKuliah/edit-index/{id}', [ViewWebController::class, 'dosenMataKuliahEditIndex']);
     // mahasiswa
     Route::get('/mahasiswa/index', [ViewWebController::class, 'mahasiswaIndex']);
     Route::post('/mahasiswa/create', [MahasiswaWebController::class, 'create']);
