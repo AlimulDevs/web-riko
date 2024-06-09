@@ -136,9 +136,18 @@
                         </li>
                         <li class="nav-item ">
                             <a href="/mataKuliah/index" class="nav-link {{(request()->is('mataKuliah/*')?'bg-secondary':'')}}">
-                                <i class="nav-icon fas fa-question"></i>
+                                <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Mata Kuliah
+
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="/dosenMataKuliah/index" class="nav-link {{(request()->is('dosenMataKuliah/*')?'bg-secondary':'')}}">
+                                <i class="nav-icon fas fa-chalkboard-teacher"></i>
+                                <p>
+                                    Dosen Mata Kuliah
 
                                 </p>
                             </a>
